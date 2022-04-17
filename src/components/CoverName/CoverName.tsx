@@ -2,17 +2,17 @@ import React from 'react';
 import {styled} from "@mui/material/styles";
 import {Typography} from "@mui/material";
 import {name} from '../../constants/header'
-const Border = styled('div')`
+
+
+const AnimatedBorder = styled('div')`
   text-align: center;
   border-radius: 12px;
-  //border: 3px solid #58B5A9FF;
   width: 190px;
   height: 100px;
   border-image-slice: 10;
   position: relative;
   z-index:0;
   overflow: hidden;
-  //-webkit-mask: linear-gradient(180deg, #58B5A9 0%, rgba(70, 141, 132, 0.32) 59.69%, rgba(99, 201, 188, 0.29) 82.08%, rgba(88, 181, 169, 0) 100%);
   
   &::before{
     position: absolute;
@@ -20,7 +20,6 @@ const Border = styled('div')`
     width: 150%;
     height: 150%;
     background-image: conic-gradient(from 270deg, transparent 65%, #63C9BC49 100%);
-    //background-image: linear-gradient(180deg, #58B5A9 0%, rgba(70, 141, 132, 0.32) 59.69%, rgba(99, 201, 188, 0.29) 82.08%, rgba(88, 181, 169, 0) 100%);
     top: -25%;
     left: -25%;
     z-index: 1;
@@ -34,7 +33,6 @@ const Border = styled('div')`
     width: 150%;
     height: 150%;
     background-image: conic-gradient(from 180deg, transparent 65%, #58B5A9);
-    //background-image: linear-gradient(180deg, #58B5A9 0%, rgba(70, 141, 132, 0.32) 59.69%, rgba(99, 201, 188, 0.29) 82.08%, rgba(88, 181, 169, 0) 100%);
     top: -25%;
     left: -25%;
     z-index: 2;
@@ -50,12 +48,12 @@ const Border = styled('div')`
 
 `;
 
-const Content = styled(Typography)`
+const Text = styled(Typography)`
   position: absolute;
-  width: 94%;
-  height: 94%;
-  top: 3%;
-  left: 3%;
+  width: 96%;
+  height: 96%;
+  top: 2%;
+  left: 2%;
   background: #0A0919;
   z-index: 3;
   display: flex;
@@ -64,14 +62,13 @@ const Content = styled(Typography)`
 
 `;
 
-
 const CoverName = () :  JSX.Element => {
     return (
-            <Border>
-                <Content variant='h1'>
+            <AnimatedBorder>
+                <Text variant='h1'>
                     {name}
-                </Content>
-            </Border>
+                </Text>
+            </AnimatedBorder>
 
     );
 };
