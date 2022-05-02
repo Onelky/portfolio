@@ -41,7 +41,6 @@ const Sections = () :  JSX.Element  => {
 const Menu = () :  JSX.Element => {
     return (
         <Grid container
-
               direction={'column'}
               height="100%"
               alignItems={'center'}
