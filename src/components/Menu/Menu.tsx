@@ -6,6 +6,7 @@ import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {menuItems} from "../../constants/menu";
 import Icon from '@mui/material/Icon';
+import Line from "../common/Line/Line";
 
 const MenuItem = styled(Typography)(({theme}) => ({
     fontFamily: 'Dosis, serif',
@@ -23,15 +24,7 @@ const MenuItem = styled(Typography)(({theme}) => ({
     }
 }));
 
-// todo: maybe refactor this into a separate component. Props will be: size and orientation.
-const Line = styled('div')(({theme}) => ({
-    width:' 90px',
-    height: '1.1px',
-    backgroundColor: '#58B5A9',
-    [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-        transform: 'rotate(-90deg)',
-    }
-}));
+
 
 
 const Sections = ({isMobile}) :  JSX.Element  => {
