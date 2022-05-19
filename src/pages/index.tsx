@@ -32,6 +32,7 @@ export default function Home() {
            <Header/>
            <Layout showMenu={showMenu}>
                <About/>
+               <div style={{height: '50vh'}}/>
            </Layout>
 
        </ThemeProvider>
