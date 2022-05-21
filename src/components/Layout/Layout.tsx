@@ -6,17 +6,26 @@ import Menu from "../Menu/Menu";
 
 const Layout = ({children, showMenu}) :  JSX.Element => {
     return (
-        <Grid container direction={{xs: 'column',md: 'row'}}>
-            <Grid item lg={1} display={{xs: 'none', md: 'block'}}>
-                <Contact/>
-            </Grid>
+        <Grid container direction={{xs: 'column',md: 'row'}} pr={12} pl={12}>
+            {
+                showMenu && (
+                    <Grid item display={{ md: 'block'}}
+                          sx={theme => ({
+                              [theme.breakpoints.up(theme.breakpoints.values.md)]:{
+                                  position: 'fixed', bottom: "1rem", left: 0
+                              }})
+                          }>
+                        <Contact/>
+                    </Grid>
+                )
+            }
 
-            <Grid item xs={10} md={10}>
+            <Grid item xs={10} md={12}>
                 {children}
             </Grid>
             {
                 showMenu && (
-                    <Grid item xs={2} md={1}
+                    <Grid item
                           sx={theme => ({
                               [theme.breakpoints.up(theme.breakpoints.values.md)]:{
                                   position: 'fixed', bottom: "1rem", right: 0
