@@ -1,10 +1,10 @@
 import React from 'react';
 import {useTheme} from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Line from "../common/Line/Line";
+import Line from "../Line/Line";
 import Stack from "@mui/material/Stack";
 import Icon from "../Icon/Icon";
-import {email, github, linkedIn} from "../../constants/iconNames";
+import {email, github, linkedIn} from "../../../constants/iconNames";
 
 const IconsContainer = ({isMobile}) => {
     return (

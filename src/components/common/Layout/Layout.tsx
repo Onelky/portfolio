@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from "@mui/material/Grid";
-import ContactSideBar from "../Contact/ContactSideBar";
+import ContactSideBar from "../ContactSideBar/ContactSideBar";
 import Menu from "../Menu/Menu";
 
 

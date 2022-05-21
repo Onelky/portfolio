@@ -2,7 +2,7 @@ import Header from "../pageComponents/Header/Header";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
 import About from "../pageComponents/About/About";
-import Layout from "../components/Layout/Layout";
+import Layout from "../components/common/Layout/Layout";
 import React, {useEffect, useState} from "react";
 
 const themeDark = createTheme({

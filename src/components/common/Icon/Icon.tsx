@@ -1,9 +1,9 @@
 import * as React from "react"
 import {SvgIcon} from "@mui/material";
-import {email, github, linkedIn} from "../../constants/iconNames";
-import GithubSvg from '../../../public/icons/github.svg'
-import LinkedInSvg from '../../../public/icons/linkedIn.svg'
-import EmailSvg from '../../../public/icons/email.svg'
+import {email, github, linkedIn} from "../../../constants/iconNames";
+import GithubSvg from '../../../../public/icons/github.svg'
+import LinkedInSvg from '../../../../public/icons/linkedIn.svg'
+import EmailSvg from '../../../../public/icons/email.svg'
 
 const getImage = (iconName) => {
     if (iconName === github) return <GithubSvg/>;

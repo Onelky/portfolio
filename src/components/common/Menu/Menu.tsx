@@ -3,9 +3,9 @@ import {styled, useTheme} from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {menuItems} from "../../constants/menu";
+import {menuItems} from "../../../constants/menu";
 import Icon from '@mui/material/Icon';
-import Line from "../common/Line/Line";
+import Line from "../Line/Line";
 
 const MenuItem = styled(Typography)(({theme}) => ({
     fontFamily: 'Dosis, serif',
