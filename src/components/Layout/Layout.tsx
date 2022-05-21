@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from "@mui/material/Grid";
-import Contact from "../Contact/Contact";
+import ContactSideBar from "../Contact/ContactSideBar";
 import Menu from "../Menu/Menu";
 
 
@@ -12,10 +12,10 @@ const Layout = ({children, showMenu}) :  JSX.Element => {
                     <Grid item display={{ md: 'block'}}
                           sx={theme => ({
                               [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-                                  position: 'fixed', bottom: "1rem", left: 0
+                                  position: 'fixed', bottom: "0", left: '2rem'
                               }})
                           }>
-                        <Contact/>
+                        <ContactSideBar/>
                     </Grid>
                 )
             }
