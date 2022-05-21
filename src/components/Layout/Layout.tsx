@@ -28,10 +28,10 @@ const Layout = ({children, showMenu}) :  JSX.Element => {
                     <Grid item
                           sx={theme => ({
                               [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-                                  position: 'fixed', bottom: "1rem", right: 0
+                                  position: 'fixed', bottom: "0", right: 0
                               }
                           })}
-                          height="400px">
+                          height="420px">
                         <Menu/>
                     </Grid>
                 )

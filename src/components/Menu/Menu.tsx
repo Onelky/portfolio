@@ -14,8 +14,11 @@ const MenuItem = styled(Typography)(({theme}) => ({
     fontSize: '16px',
     textAlign: 'center',
     background: 'transparent',
-    '& :hover': {
-        color: '#58B5A9',
+    ':active': {
+        color: 'var(--accent-color)',
+    },
+    ':hover': {
+        color: 'var(--accent-color)',
         cursor: 'pointer'
     },
     [theme.breakpoints.up(theme.breakpoints.values.md)]:{
