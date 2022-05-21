@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from "@mui/material/Grid";
 import {styled, useTheme} from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
@@ -70,23 +69,19 @@ const Menu = () :  JSX.Element => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <Grid container
-              direction={{xs: 'row',md: 'column'}}
-              height="100%"
-              alignItems={'center'}
-              justifyContent={{xs: 'center', md: 'space-between'}}>
-            <Grid item xs={12} md={11}>
-                <Sections isMobile={isMobile}/>
-            </Grid>
+        <Stack direction={{xs: 'row',md: 'column'}}
+               height="100%"
+               alignItems={'center'}
+               justifyContent={{xs: 'center', md: 'space-between'}}>
+
+            <Sections isMobile={isMobile}/>
             {
                 !isMobile && (
-                    <Grid item  md={1}>
-                        <Line/>
-                    </Grid>
+                    <Line/>
                 )
             }
 
-        </Grid>
+        </Stack>
     );
 };
 

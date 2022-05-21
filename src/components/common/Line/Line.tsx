@@ -6,16 +6,16 @@ interface Props {
     height?: string;
     horizontal?: boolean;
 }
+const defaultHeight = '90px';
+const defaultWidth = '1.2px';
+
 const Line = ({width, height, horizontal = false}: Props) => {
     return (
         <Box component={'div'}
-             sx={theme => ({
-                 width: width || '90px',
-                 height: height || '1.1px',
+             sx={() => ({
+                 width: width || (horizontal ? defaultHeight : defaultWidth),
+                 height: height || (horizontal ? defaultWidth : defaultHeight),
                  backgroundColor: '#58B5A9',
-                 [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-                     transform: !horizontal && 'rotate(-90deg)',
-                 }
              })}
         />
 
