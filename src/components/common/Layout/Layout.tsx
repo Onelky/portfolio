@@ -6,15 +6,18 @@ import Menu from "../Menu/Menu";
 
 const Layout = ({children, showMenu}) :  JSX.Element => {
     return (
-        <Grid container direction={{xs: 'column',md: 'row'}} pr={12} pl={12}>
+        <Grid container
+              direction={{xs: 'column',md: 'row'}}
+              pr={{xs: 5, sm: 10, md: 15}}
+              pl={{xs: 5, sm: 10,md: 15}}>
             {
                 showMenu && (
-                    <Grid item display={{ md: 'block'}}
-                          sx={theme => ({
-                              [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-                                  position: 'fixed', bottom: "0", left: '2rem'
-                              }})
-                          }>
+                    <Grid item sx={{
+                        position: {md: 'fixed'},
+                        bottom: 0,
+                        left: '2rem',
+                        display:{xs: 'none', md: 'block'},
+                    }}>
                         <ContactSideBar/>
                     </Grid>
                 )
@@ -26,12 +29,8 @@ const Layout = ({children, showMenu}) :  JSX.Element => {
             {
                 showMenu && (
                     <Grid item
-                          sx={theme => ({
-                              [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-                                  position: 'fixed', bottom: "0", right: 0
-                              }
-                          })}
-                          height="420px">
+                          height="420px"
+                          sx={{ position: {md: 'fixed'}, bottom: "0", right: 0 }}>
                         <Menu/>
                     </Grid>
                 )

@@ -54,7 +54,6 @@ a {
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
-  text-align: center;
   color: var(--title-color);
 }
 .MuiTypography-subtitle1 {
