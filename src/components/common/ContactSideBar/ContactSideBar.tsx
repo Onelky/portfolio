@@ -27,18 +27,11 @@ const ContactSideBar = (props) :  JSX.Element => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <Stack {...props}
-              container
               direction={{xs: 'row',md: 'column'}}
               alignItems={'center'}
                spacing={2}
               justifyContent={{xs: 'center', md: 'space-between'}}
-              sx={theme => ({
-                  [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-                      justifyContent: 'space-between',
-                      height:"200px"
-                  },
-              })}
-        >
+              sx={{justifyContent: {md: 'space-between'}, height:"200px"}}>
             {
                 isMobile && (
                         <Line horizontal/>
