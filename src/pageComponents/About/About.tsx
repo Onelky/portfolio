@@ -3,50 +3,69 @@ import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import linePositions from "../../constants/sectionHeader";
 import BlueButton from "../../components/common/BlueButton/BlueButton";
 import Stack from "@mui/material/Stack";
+import Grid from "@mui/material/Grid";
+import Image from 'next/image'
+import avatar from '../../../public/images/onelky-avatar.png'
+import Box from "@mui/material/Box";
 
-const PictureContainer = (): JSX.Element => {
+const Picture = (): JSX.Element => {
     return(
-        <>
-            hii
-        </>
+        <Box sx={{
+            position: 'relative',
+            width: {xs: '300px', sm: '350px', lg: '400px', xl: '500px'},
+            height: {xs: '300px', sm: '350px', lg: '400px', xl: '500px'},
+        }}>
+            <Image src={avatar} layout="fill" />
+        </Box>
     )
 }
 const DescriptionContainer = (): JSX.Element => {
     return(
-        <>
-            <SectionHeader title={'About me'}
-                           linePosition={linePositions.right}
-                           justifyContent={'end'}/>
-            {/*<BlueButton text={'Resume'}/>*/}
-        </>
+        <Stack sx={{width: '50%'}}>
+            Description
+        </Stack>
     )
 }
-/* Page's first section that contains creator's name and animated arrows. */
 const About = (): JSX.Element => {
-    // todo: create picture container
     // todo: add DescriptionContainer
     // todo: style Description
 
     return (
-        <Stack direction={{xs: 'column', md: 'row'}}
-               mt={4}
-               width={'100%'}
-               minHeight={'465px'}
-               sx={theme => ({
-                       [theme.breakpoints.up(theme.breakpoints.values.md)]:{
-                           justifyContent:'space-around',
-                           alignItems: 'start'
-                       },
-                       [theme.breakpoints.down(theme.breakpoints.values.md)]:{
-                           justifyContent:'start',
-                           alignItems: 'center'
+        <Grid container
+              direction='column'
+              mt={4}
+              width={'100%'}>
 
-                       }
-               })}
-        >
-            <PictureContainer/>
-            <DescriptionContainer/>
-        </Stack>
+            <Grid item xs={2}
+                  display={'flex'}
+                  flex-direction={'column'}
+                  width={{xs: '100%',md: '50%' }}
+                  alignSelf={'end'}
+                  height={'36px'}>
+                <SectionHeader title={'About me'}
+                               linePosition={linePositions.right}
+                               justifyContent={'end'}/>
+
+            </Grid>
+            <Grid item xs={10} width='100%'>
+                <Grid container
+                      mt={3}
+                      alignItems={'center'}
+                      rowSpacing={4}
+                      flexWrap={'nowrap'}
+                      direction={{xs: 'column', md: 'row'}}>
+
+                    <Grid item md={6} display={'flex'} justifyContent={'center'}>
+                        <Picture/>
+                    </Grid>
+
+                    <Grid item md={6}>
+                        <DescriptionContainer/>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </Grid>
     );
 };
 
