@@ -15,7 +15,7 @@ const Layout = ({children, showMenu}) :  JSX.Element => {
                     <Grid item sx={{
                         position: {md: 'fixed'},
                         bottom: 0,
-                        left: '2rem',
+                        left: '1rem',
                         display:{xs: 'none', md: 'block'},
                     }}>
                         <ContactSideBar/>

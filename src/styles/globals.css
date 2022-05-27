@@ -28,6 +28,10 @@ a {
   box-sizing: border-box;
 }
 
+main{
+  max-width: 1600px;
+  margin: auto
+}
 /* Typography styles  */
 
 .MuiTypography-h1 {
@@ -81,6 +85,7 @@ a {
   font-style: normal;
   font-weight: 300;
   font-size: 18px;
-  text-align: center;
   color:  var(--paragraph-color);
 }
+
+

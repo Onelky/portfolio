@@ -29,11 +29,13 @@ export default function Home() {
   return (
        <ThemeProvider theme={themeDark}>
            <CssBaseline />
-           <Header/>
-           <Layout showMenu={showMenu}>
-               <About/>
-               <div style={{height: '50vh'}}/>
-           </Layout>
+           <main>
+               <Header/>
+               <Layout showMenu={showMenu}>
+                   <About/>
+                   <div style={{height: '50vh'}}/>
+               </Layout>
+           </main>
 
        </ThemeProvider>
   )
