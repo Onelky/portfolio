@@ -15,13 +15,13 @@ const SectionHeader = (props: Props) => {
         <Stack minWidth={'100%'} direction={'row'} spacing={2} justifyContent={justifyContent || 'center'} alignItems={'center'}>
             {
                 linePosition !== linePositions.right && (
-                    <Line horizontal width={linePosition === linePositions.left ? '80%' : '40%'}/>
+                    <Line horizontal width={'100%'}/>
                 )
             }
-            <Typography variant={'h2'} sx={{width: '20%', whiteSpace: 'nowrap'}}>{title}</Typography>
+            <Typography variant={'h2'} sx={{whiteSpace: 'nowrap'}}>{title}</Typography>
             {
                 linePosition !== linePositions.left && (
-                    <Line horizontal width={linePosition === linePositions.right ? '80%' : '40%'}/>
+                    <Line horizontal width={'100%'}/>
                 )
             }
         </Stack>
