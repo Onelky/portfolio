@@ -8,22 +8,23 @@ const Layout = ({children, showMenu}) :  JSX.Element => {
     return (
         <Grid container
               direction={{xs: 'column',md: 'row'}}
-              pr={{xs: 5, sm: 10, md: 15}}
-              pl={{xs: 5, sm: 10,md: 15}}>
+              pr={{xs: '5%', sm: 10, md: 15}}
+              pl={{xs: '5%', sm: 10,md: 15}}>
             {
                 showMenu && (
-                    <Grid item sx={{
-                        position: {md: 'fixed'},
-                        bottom: 0,
-                        left: '1rem',
-                        display:{xs: 'none', md: 'block'},
-                    }}>
+                    <Grid item
+                          sx={{
+                              position: {md: 'fixed'},
+                              bottom: 0,
+                              left: '1rem',
+                              display:{xs: 'none', md: 'block'},
+                          }}>
                         <ContactSideBar/>
                     </Grid>
                 )
             }
 
-            <Grid item xs={10} md={12}>
+            <Grid item xs={12} md={12}>
                 {children}
             </Grid>
             {

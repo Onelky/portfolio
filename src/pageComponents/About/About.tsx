@@ -33,13 +33,14 @@ const Content = (): JSX.Element => {
                alignItems={'center'}>
             <Typography paragraph
                         sx={{
-                            alignItems: 'center',
+                            textAlignLast: {xs: 'center', sm: 'justify'},
                             textAlign: 'justify',
+                            m: {xs: '2rem 1rem', md: 0}
                         }}>
                 {descriptionParagraph}
             </Typography>
             <Stack direction={'row'}
-                   spacing={3}
+                   spacing={{ xs: 2, sm: 3,}}
                    justifyContent={'center'}>
 
                 <a href={'/docs/resume.pdf'} target="_blank">
@@ -61,17 +62,15 @@ const About = (): JSX.Element => {
               width={'100%'}>
 
             <Grid item xs={2}
-                  display={'flex'}
-                  flex-direction={'column'}
+                  ml={{md: 'auto'}}
                   width={{xs: '100%',md: '50%' }}
-                  alignSelf={'end'}
                   height={'36px'}>
                 <SectionHeader title={'About me'}
                                linePosition={linePositions.right}
                                justifyContent={'start'}/>
 
             </Grid>
-            <Grid item xs={10} width='100%'>
+            <Grid item xs={12} width='100%'>
                 <Grid container
                       mt={3}
                       flexWrap={'nowrap'}
