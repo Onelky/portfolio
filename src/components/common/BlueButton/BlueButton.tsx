@@ -45,7 +45,7 @@ const AnimatedContainer = styled(Button)(()=> ({
     }
 }));
 
-const BlueButton = ({text, onClick, ...props}: { text: string, onClick: any}) => {
+const BlueButton = ({text, onClick, ...props}: { text: string, onClick?: any}) => {
 
     return (
         <AnimatedContainer onClick={onClick} {...props}>

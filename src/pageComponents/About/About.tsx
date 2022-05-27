@@ -5,30 +5,54 @@ import BlueButton from "../../components/common/BlueButton/BlueButton";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Image from 'next/image'
-import avatar from '../../../public/images/onelky-avatar.png'
+import avatar from '../../../public/images/onelky-avatar-cut.png'
 import Box from "@mui/material/Box";
+import {Typography} from "@mui/material";
+import {descriptionParagraph} from "../../constants/about";
 
 const Picture = (): JSX.Element => {
     return(
         <Box sx={{
             position: 'relative',
-            width: {xs: '300px', sm: '350px', lg: '400px', xl: '500px'},
-            height: {xs: '300px', sm: '350px', lg: '400px', xl: '500px'},
+            width: {xs: '300px', sm: '300px',  },
+            height: {xs: '300px', sm: '300px', },
         }}>
-            <Image src={avatar} layout="fill" />
+            <Image src={avatar} layout="fill" objectFit={'cover'} />
         </Box>
     )
 }
-const DescriptionContainer = (): JSX.Element => {
+
+const Content = (): JSX.Element => {
+    const onClick = () => {
+        console.log('click')
+    }
     return(
-        <Stack sx={{width: '50%'}}>
-            Description
+        <Stack direction={'column'}
+               justifyContent={'space-around'}
+               minHeight={'100%'}
+               alignItems={'center'}>
+            <Typography paragraph
+                        sx={{
+                            alignItems: 'center',
+                            textAlign: 'justify',
+                        }}>
+                {descriptionParagraph}
+            </Typography>
+            <Stack direction={'row'}
+                   spacing={3}
+                   justifyContent={'center'}>
+
+                <a href={'/docs/resume.pdf'} target="_blank">
+                    <BlueButton text={'Resume'}/>
+                </a>
+                {/*todo: add link to email (when that functionaity is ready)*/}
+                <BlueButton text={'Say Hello'} onClick={onClick}/>
+            </Stack>
         </Stack>
+
     )
 }
 const About = (): JSX.Element => {
-    // todo: add DescriptionContainer
-    // todo: style Description
 
     return (
         <Grid container
@@ -44,14 +68,12 @@ const About = (): JSX.Element => {
                   height={'36px'}>
                 <SectionHeader title={'About me'}
                                linePosition={linePositions.right}
-                               justifyContent={'end'}/>
+                               justifyContent={'start'}/>
 
             </Grid>
             <Grid item xs={10} width='100%'>
                 <Grid container
                       mt={3}
-                      alignItems={'center'}
-                      rowSpacing={4}
                       flexWrap={'nowrap'}
                       direction={{xs: 'column', md: 'row'}}>
 
@@ -60,7 +82,7 @@ const About = (): JSX.Element => {
                     </Grid>
 
                     <Grid item md={6}>
-                        <DescriptionContainer/>
+                        <Content/>
                     </Grid>
                 </Grid>
 
