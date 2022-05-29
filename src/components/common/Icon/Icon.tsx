@@ -3,10 +3,10 @@ import {SvgIcon} from "@mui/material";
 import getIconImage from "../../../lib/utils";
 
 
-const Icon = ({name, hoverColor = false, ...props}) => {
+const Icon = ({name, size = 26, hoverColor = false, ...props}) => {
     const Icon = getIconImage(name);
     return <SvgIcon sx={{
-        fontSize: 26,
+        fontSize: size,
         ...(hoverColor && {
             ':hover': {
                 color: 'var(--accent-color)',
