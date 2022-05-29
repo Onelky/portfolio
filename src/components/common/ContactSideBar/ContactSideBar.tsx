@@ -15,7 +15,7 @@ const IconsContainer = ({isMobile}) => {
             <a target="_blank" style={{height: '26px'}} href={'https://www.linkedin.com/in/onelky/'}>
                 <Icon name={linkedIn} hoverColor/>
             </a>
-            <a target="_blank" style={{height: '26px'}} href={'#'}>
+            <a target="_blank" href="mailto:onelky.hernandez29@gmail.com" style={{height: '26px'}}>
                 <Icon name={email} hoverColor/>
             </a>
         </Stack>
