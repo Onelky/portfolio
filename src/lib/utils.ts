@@ -25,6 +25,8 @@ import Redux from '../../public/icons/redux.svg'
 import SqLite  from '../../public/icons/sqlite.svg'
 import SqlServer from '../../public/icons/sqlServer.svg'
 import Typescript from '../../public/icons/typescript.svg'
+import Cypress from '../../public/icons/cypress.svg'
+
 
 import {
     email,
@@ -37,7 +39,7 @@ import {
     css,
     docker,
     expressJs, figma, git, graphQL, javascript, linkDemo,
-    jest, materialUI, mongo, mySql, nextJs, nodeJs, python, react, redux, sqLite, sqlServer, typescript
+    jest, materialUI, mongo, mySql, nextJs, nodeJs, python, react, redux, sqLite, sqlServer, typescript, cypress
 } from "../constants/iconNames";
 
 const getIconImage = (iconName) => {
@@ -56,7 +58,7 @@ const getIconImage = (iconName) => {
     if (iconName === materialUI) return MaterialUI;
     if (iconName === Mongo) return mongo;
     if (iconName === mySql) return MySql;
-    if (iconName === NextJs) return nextJs;
+    if (iconName === nextJs) return NextJs;
     if (iconName === nodeJs) return NodeJs;
     if (iconName === python) return Python;
     if (iconName === react) return React;
@@ -68,6 +70,8 @@ const getIconImage = (iconName) => {
     if (iconName === linkedIn) return LinkedInSvg;
     if (iconName === email) return EmailSvg;
     if (iconName === html) return HtmlSvg;
+    if (iconName === cypress) return Cypress;
+
 
 }
 export default getIconImage
