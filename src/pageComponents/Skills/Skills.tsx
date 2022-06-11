@@ -3,10 +3,11 @@ import Stack from "@mui/material/Stack";
 import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import linePositions from "../../constants/sectionHeader";
 import Box  from '@mui/material/Box';
-import SkillCards from "../../components/SkillCards/SkillCards";
+import SkillCards from "../../components/Skills/SkillCards/SkillCards";
 import skillCards from "../../constants/skillCards";
+import Languages from "../../components/Skills/Languages/Languages";
 
-const Skills: FunctionComponent = (props) => {
+const Skills: FunctionComponent = () => {
 
   return (
       <Stack justifyContent={'space-around'} mt={15} spacing={8}>
@@ -14,8 +15,7 @@ const Skills: FunctionComponent = (props) => {
               <SectionHeader title={'Tools & Skills'} linePosition={linePositions.right}></SectionHeader>
           </Box>
           <SkillCards items={skillCards}/>
-          <div style={{height: '60px', backgroundColor: 'blue'}}>languages</div>
-
+          <Languages/>
       </Stack>
   );
 };
