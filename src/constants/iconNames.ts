@@ -1,6 +1,6 @@
 export const angular: string = 'Angular';
 export const bootstrap: string = 'Bootstrap';
-export const cSharp: string = 'C#';
+export const cSharp: string = 'C Sharp';
 export const css: string = 'CSS';
 export const docker: string = 'Docker';
 export const expressJs: string = 'ExpressJs';
@@ -23,6 +23,6 @@ export const python: string = 'Python';
 export const react: string = 'React';
 export const redux: string = 'Redux';
 export const sqLite: string = 'SQLite';
-export const sqlServer: string = 'SqlServer';
+export const sqlServer: string = 'SQL Server';
 export const typescript: string = 'TypeScript';
 export const cypress: string = 'Cypress';

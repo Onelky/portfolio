@@ -20,6 +20,7 @@ const skillCards  = [
             icons.expressJs,
             icons.cSharp,
             icons.python,
+            icons.mongo,
             icons.mySql,
             icons.sqlServer
         ]
