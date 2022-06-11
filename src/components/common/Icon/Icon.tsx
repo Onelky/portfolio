@@ -1,30 +1,32 @@
-import * as React from "react"
-import {SvgIcon} from "@mui/material";
-import getIconImage from "../../../lib/utils";
-
+import React, {useState} from "react"
+import Box from "@mui/material/Box";
+import Image from "next/image";
 interface Props {
     name: string,
     size?: number,
     color?: string,
-    hoverColor?: boolean
+    useHoverEffect?: boolean,
+    other?: object
 }
-const Icon = ({name, size = 26, color,  hoverColor = false, ...props}: Props) => {
-    const Icon = getIconImage(name);
+const Icon = ({name, size = 26, color,  useHoverEffect = false, ...other}: Props) => {
+    const [isHovered, setIsHovered] = useState(false)
+
+    if (useHoverEffect) {
+        // @ts-ignore
+        other.onMouseOver = () => {
+            setIsHovered(true)
+        };
+        // @ts-ignore
+        other.onMouseLeave = () => {
+            setIsHovered(false)
+        };
+    }
     return (
-        <SvgIcon
-            sx={{
-                fontSize: size,
-                svg: {width: 'auto', height: 'auto'},
-                ...(hoverColor && {
-                    ':hover': {
-                        color: color || 'var(--accent-color)',
-                        cursor: 'pointer'
-                    }
-                })
-            }}
-            {...props}>
-            <Icon/>
-        </SvgIcon>)
+        <Box sx={{position: 'relative', width: size, height: size,  minWidth: size, minHeight: size}}
+             {...other}>
+            <Image src={`/icons/${name + (isHovered ? 'Hover' : '')}.svg`} layout={'fill'}/>
+        </Box>
+    )
 
 }
 
