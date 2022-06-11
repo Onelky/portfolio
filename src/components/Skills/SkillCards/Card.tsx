@@ -3,8 +3,8 @@ import Grid from "@mui/material/Grid";
 import React, {FunctionComponent} from "react";
 import Stack from "@mui/material/Stack";
 import {Typography} from "@mui/material";
-import getIconPath from "../../lib/utils";
-import ToolIcon from "../common/ToolIcon/ToolIcon";
+import getIconPath from "../../../lib/utils";
+import ToolIcon from "../../common/ToolIcon/ToolIcon";
 import {SkillCardProps} from './SkillCards'
 const StyledContainer = styled(Grid)(() => ({
     backgroundColor: 'green',
