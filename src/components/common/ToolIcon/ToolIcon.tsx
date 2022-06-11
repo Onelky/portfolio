@@ -4,13 +4,14 @@ import {Typography} from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 interface Props {
+    label: string,
     name: string,
     horizontalLayout?: boolean,
     iconSize?: number,
 }
 
 const ToolIcon: FunctionComponent<Props> = (props) => {
-    const { name = '',  iconSize = 30, horizontalLayout = false} = props;
+    const { name = '',  label, iconSize = 30, horizontalLayout = false} = props;
   return (
       <Stack direction={horizontalLayout ? 'row' : 'column'}
              p={'5px'}
@@ -24,7 +25,7 @@ const ToolIcon: FunctionComponent<Props> = (props) => {
                  transition: 'all 400ms ease-in-out'
              }}>
           <Icon name={name} size={iconSize}></Icon>
-          <Typography variant={'subtitle1'} sx={{color: 'var(--accent-color) !important'}}>{name}</Typography>
+          <Typography variant={'subtitle1'} sx={{color: 'var(--accent-color) !important'}}>{label}</Typography>
 
       </Stack>
   );
