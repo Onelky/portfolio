@@ -1,5 +1,5 @@
 import React from 'react';
-import CoverName from "../../components/CoverName/CoverName";
+import CoverName from "../../components/Header/CoverName";
 import Arrows from "../../components/Arrows/Arrows";
 import Grid from "@mui/material/Grid";
 
