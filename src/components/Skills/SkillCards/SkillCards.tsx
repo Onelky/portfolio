@@ -10,7 +10,7 @@ export interface SkillCardProps {
 interface Props {
     items: SkillCardProps[]
 }
-
+// todo: update all names of icons
 const SkillCards: FunctionComponent<Props> = ({items}) => {
     return (
         <Stack justifyContent={'space-around'}
@@ -23,7 +23,7 @@ const SkillCards: FunctionComponent<Props> = ({items}) => {
         >
             {
                 items.map((item) => (
-                    <Card title={item.title} icons={item.icons}></Card>
+                    <Card key={item.title} title={item.title} icons={item.icons}></Card>
                 ))
             }
         </Stack>
