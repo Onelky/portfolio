@@ -6,6 +6,7 @@ import {Typography} from "@mui/material";
 import getIconPath from "../../../lib/utils";
 import ToolIcon from "../../common/ToolIcon/ToolIcon";
 import {SkillCardProps} from './SkillCards'
+
 const StyledContainer = styled(Grid)(() => ({
     backgroundColor: 'green',
     height: '380px',
@@ -20,7 +21,11 @@ const Card: FunctionComponent<SkillCardProps> = ({title, icons}) => {
     return (
         <Stack alignItems={'center'}
                rowGap={1}
-               sx={{minHeight: 410, width: {xs: 260, md: '30%', lg: 260}, maxWidth: 260}}>
+               sx={{
+                   minHeight: 410,
+                   width: {xs: 260, md: '30%', lg: 260},
+                   maxWidth: 260
+               }}>
             <Typography variant={'h3'}>{title || 'Front-end'}</Typography>
 
             <StyledContainer container >

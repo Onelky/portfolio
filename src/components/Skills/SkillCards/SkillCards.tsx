@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, {FunctionComponent} from 'react';
 import Stack from "@mui/material/Stack";
 import Card from "./Card";
 
@@ -10,15 +10,14 @@ export interface SkillCardProps {
 interface Props {
     items: SkillCardProps[]
 }
-// todo: update all names of icons
+
 const SkillCards: FunctionComponent<Props> = ({items}) => {
     return (
-        <Stack justifyContent={'space-around'}
-               columnGap={2}
-               rowGap={5}
+        <Stack spacing={{xs: 5, md: 0}}
                sx={{
                    flexDirection: {xs: 'column', md: 'row'},
-                   alignItems: 'center'
+                   alignItems: 'center',
+                   justifyContent: 'space-around',
                }}
         >
             {
