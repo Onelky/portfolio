@@ -5,67 +5,31 @@ import linePositions from "../../constants/sectionHeader";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import TechnologiesList from "../../components/Projects/TechnologiesList";
+import {Project, project1} from "../../constants/projects";
+import Icon from "../../components/common/Icon/Icon";
 import getIconPath from "../../lib/utils";
-import ToolIcon from "../../components/common/ToolIcon/ToolIcon";
-import {styled} from "@mui/material/styles";
+import {demo, github} from "../../constants/iconNames";
 
 // todo: Add constant file with all this
 
-interface Props {
-    projectName: string,
-    picture: string,
-    technologies: string[],
-    description: string,
-    demo: string,
-    github: string
-}
 // todo: Add responsive image and text above image
 // todo: Add images of projects, add effects
-// todo: Add github and demo links
-// todo: Add description
 
-const TechnologyPill = styled(Grid)(() => ({
-    background: 'rgba(2, 2, 4, 0.61)',
-    borderRadius: 12,
-    maxWidth: 'max-content !important',
-    padding: '0 5px',
-    ':hover': {
-        transform: 'translateY(-3px)'
-    },
-    transition: 'all 400ms ease-in-out'
-}))
+export interface Props {
+    project: Project,
+    containerDirection?: string,
+}
 
-const TechnologiesList = ({technologies}: {technologies: string[]}) => {
-    return (
-        <Grid container
-              justifyContent={'center'}
-              maxWidth={350}
-              m={'10px auto'}
-              rowGap={1}
-              columnGap={1}
-        >
-            {
-                technologies.map((name) => (
-                    <TechnologyPill item key={getIconPath(name)} xs={3} md={4}>
-                        <ToolIcon horizontalLayout label={name} iconSize={18} name={getIconPath(name)} />
-                    </TechnologyPill>
-                ))
-            }
-
-        </Grid>
-    );
-};
-
-
-const Project: FunctionComponent<Props> = (props) => {
-    const {projectName, technologies} = props
+const Project = ({project, containerDirection} : Props ) => {
+    const {projectName, technologies, description, githubUrl, demoUrl} = project;
 
     return (
-        <Grid container justifyContent={'space-around'}>
-            <Grid item xs={12} md={6}>
+        <Grid container justifyContent={'space-around'} direction={containerDirection || 'row'}>
+            <Grid item xs={12} md={6} sx={{backgroundColor: 'green'}}>
                 Picture
             </Grid>
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6} p={'0 70px'}>
                 <Typography variant={'h3'}
                             textAlign={'center'}
                             letterSpacing={'2px'}
@@ -73,7 +37,18 @@ const Project: FunctionComponent<Props> = (props) => {
                     {projectName}
                 </Typography>
                 <TechnologiesList technologies={technologies}/>
+                <Typography paragraph sx={{ textAlign: {xs: 'center', md: 'justify'}, m: {xs: '2rem 0rem'}}}>
+                    {description}
+                </Typography>
 
+                <Stack spacing={1} direction={'row'} justifyContent={'center'}>
+                    <a target="_blank" href={githubUrl}>
+                        <Icon name={getIconPath(github)}  size={30} useHoverEffect/>
+                    </a>
+                    <a target="_blank" href={demoUrl}>
+                        <Icon name={getIconPath(demo)} size={25} useHoverEffect/>
+                    </a>
+                </Stack>
             </Grid>
         </Grid>
     );
@@ -88,13 +63,8 @@ const Projects: FunctionComponent = () => {
             <Box sx={{width: {xs: '100%', md: '50%'}}}>
                 <SectionHeader title={'Projects'} linePosition={linePositions.right}/>
             </Box>
-            <Project projectName={'MyTasks'}
-                     picture={'#'}
-                     description={'Lorem ipsun'}
-                     technologies={['Angular', 'TypeScript', 'Bootstrap', 'C Sharp', 'SQLite', 'Docker']}
-                     demo={'#'}
-                     github={'#'}
-            />
+            <Project project={project1} />
+            <Project project={project1} containerDirection={'row-reverse'}/>
 
         </Stack>
     );
