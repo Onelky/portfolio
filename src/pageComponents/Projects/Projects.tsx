@@ -16,8 +16,6 @@ export interface Props {
     project: Project,
     containerDirection?: string,
 }
-// todo: Add responsive design to image and text above image
-
 const Project = ({project, containerDirection = 'row'} : Props ) => {
     const {projectName, technologies, imagePath, description, githubUrl, demoUrl} = project;
 
@@ -28,8 +26,8 @@ const Project = ({project, containerDirection = 'row'} : Props ) => {
             <Grid item
                   xs={12}
                   md={6}
-                  width={560}
-                  height={310}
+                  width={{xs: '100%'}}
+                  height={{xs: 330}}
                   position={'relative'}
                   sx={{
                       '& span::before': {
@@ -38,7 +36,7 @@ const Project = ({project, containerDirection = 'row'} : Props ) => {
                           display: 'block',
                           width: '100%',
                           height: '100%',
-                          background: 'rgba(88, 181, 169, 0.4)',
+                          background: {xs: 'rgba(10, 9, 25, 0.9)', md: 'rgba(88, 181, 169, 0.4)'},
                           content: '""',
                           cursor: 'pointer',
                       },
@@ -51,7 +49,11 @@ const Project = ({project, containerDirection = 'row'} : Props ) => {
                     <Image src={ `/images/${imagePath}.png`} layout={'fill'}></Image>
                 </a>
             </Grid>
-            <Grid item xs={12} md={6} p={'0 70px'}>
+            <Grid item xs={8} sm={9} md={6}
+                  p={{xs: '10px 0', md: '0 30px', xl: '0 70px'}}
+                  minWidth={{xs: '80%',md: 'auto'}}
+                  zIndex={{xs: 1}}
+                  position={{xs: 'absolute', md: 'initial'}}>
                 <Typography variant={'h3'}
                             textAlign={'center'}
                             letterSpacing={'2px'}
@@ -59,7 +61,17 @@ const Project = ({project, containerDirection = 'row'} : Props ) => {
                     {projectName}
                 </Typography>
                 <TechnologiesList technologies={technologies}/>
-                <Typography paragraph sx={{ textAlign: {xs: 'center', md: 'justify'}, m: {xs: '2rem 0rem'}}}>
+                <Typography paragraph
+                            sx={{
+                                textAlign: {xs: 'center', md: 'justify'},
+                                m: {xs: '2rem 0rem'},
+                                overflow: 'hidden',
+                                display: '-webkit-box',
+                                textOverflow: 'ellipsis',
+                                WebkitLineClamp: {xs: 4, sm: 8},
+                                WebkitBoxOrient: 'vertical',
+
+                            }}>
                     {description}
                 </Typography>
 
