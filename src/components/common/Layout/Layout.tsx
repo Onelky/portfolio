@@ -8,8 +8,8 @@ const Layout = ({children, showMenu}) :  JSX.Element => {
     return (
         <Grid container
               direction={{xs: 'column',md: 'row'}}
-              pr={{xs: '5%', sm: 10, md: 15}}
-              pl={{xs: '5%', sm: 10,md: 15}}>
+              pr={{xs: 5, md: 10}}
+              pl={{xs: 5, md: 10}}>
             {
                 showMenu && (
                     <Grid item

@@ -11,24 +11,33 @@ interface Props {
 }
 
 const ToolIcon: FunctionComponent<Props> = (props) => {
-    const { name = '',  label, iconSize = 30, horizontalLayout = false} = props;
-  return (
-      <Stack direction={horizontalLayout ? 'row' : 'column'}
-             p={'5px'}
-             height={60}
-             alignItems={'center'}
-             justifyContent={'center'}
-             sx={{
-                 ':hover': {
-                     transform: 'translateY(-5px)'
-                 },
-                 transition: 'all 400ms ease-in-out'
-             }}>
-          <Icon name={name} size={iconSize}></Icon>
-          <Typography variant={'subtitle1'} sx={{color: 'var(--accent-color) !important'}}>{label}</Typography>
+    const { name,  label, iconSize = 30, horizontalLayout = false} = props;
+    return (
+        <Stack p={'5px'}
+               height={'max-content'}
+               alignItems={'center'}
+               justifyContent={'center'}
+               sx={{
+                   flexDirection: horizontalLayout ? 'row' : 'column',
+                   ':hover': {
+                       transform: horizontalLayout ? 'none' : 'translateY(-5px)'
+                   },
+                   transition: 'all 400ms ease-in-out'
+               }}>
+            <Icon name={name} size={iconSize}></Icon>
+            <Typography variant={'subtitle1'}
+                        sx={{
+                            color: 'var(--accent-color) !important',
+                            ml: horizontalLayout && '2px',
+                            fontSize: horizontalLayout && '14px !important',
+                            whiteSpace: 'nowrap'
+                        }}
+            >
+                {label}
+            </Typography>
 
-      </Stack>
-  );
+        </Stack>
+    );
 };
 
 export default ToolIcon;

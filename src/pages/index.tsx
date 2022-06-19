@@ -1,10 +1,11 @@
 import Header from "../pageComponents/Header/Header";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from "@mui/material/CssBaseline";
 import About from "../pageComponents/About/About";
 import Layout from "../components/common/Layout/Layout";
 import React, {useEffect, useState} from "react";
 import Skills from "../pageComponents/Skills/Skills";
+import Projects from "../pageComponents/Projects/Projects";
 
 const themeDark = createTheme({
     palette: {
@@ -35,6 +36,7 @@ export default function Home() {
                <Layout showMenu={showMenu}>
                    <About/>
                    <Skills></Skills>
+                   <Projects/>
                    <div style={{height: '50vh'}}/>
                </Layout>
            </main>
