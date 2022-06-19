@@ -39,6 +39,7 @@ const Sections = ({isMobile}) :  JSX.Element  => {
                component={'nav'}
                sx={theme => ({
                    [theme.breakpoints.down(theme.breakpoints.values.md)]:{
+                       zIndex: 2,
                        backgroundColor: 'rgba(0,0,0, 0.3)',
                        padding: '1rem 1.7rem',
                        borderRadius: '16px',
