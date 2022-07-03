@@ -6,6 +6,7 @@ import Layout from "../components/common/Layout/Layout";
 import React, {useEffect, useState} from "react";
 import Skills from "../pageComponents/Skills/Skills";
 import Projects from "../pageComponents/Projects/Projects";
+import Contact from "../pageComponents/Contact/Contact";
 
 const themeDark = createTheme({
     palette: {
@@ -35,9 +36,9 @@ export default function Home() {
                <Header/>
                <Layout showMenu={showMenu}>
                    <About/>
-                   <Skills></Skills>
+                   <Skills/>
                    <Projects/>
-                   <div style={{height: '50vh'}}/>
+                   <Contact/>
                </Layout>
            </main>
 

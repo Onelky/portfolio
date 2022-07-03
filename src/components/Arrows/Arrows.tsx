@@ -14,10 +14,10 @@ const ArrowAnimation = styled('div')`
     margin: -10px;
     animation: animate 2.5s infinite;
   }
-  span:nth-child(2){
+  span:nth-of-type(2){
     animation-delay: -0.2s;
   }
-  span:nth-child(3){
+  span:nth-of-type(3){
     animation-delay: -0.4s;
   }
   @keyframes animate {

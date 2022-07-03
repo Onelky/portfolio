@@ -7,15 +7,16 @@ import MessageOutlinedIcon from '@mui/icons-material/MessageOutlined';
 
 interface MenuItem  {
     name: String
-    icon: any
+    icon: any,
+    sectionId: string
 }
 
 export const menuItems: MenuItem[] = [
-    {name: 'Home', icon: HomeOutlinedIcon},
-    {name: 'About', icon: PersonOutlineOutlinedIcon},
-    {name: 'Skills', icon: BookOutlinedIcon},
-    {name: 'Projects', icon: CodeOutlinedIcon},
-    {name: 'Contact', icon: MessageOutlinedIcon},
+    {name: 'Home', icon: HomeOutlinedIcon, sectionId: 'header'},
+    {name: 'About', icon: PersonOutlineOutlinedIcon, sectionId: 'about'},
+    {name: 'Skills', icon: BookOutlinedIcon, sectionId: 'skills'},
+    {name: 'Projects', icon: CodeOutlinedIcon, sectionId: 'projects'},
+    {name: 'Contact', icon: MessageOutlinedIcon, sectionId: 'contact'},
 
 ];
 

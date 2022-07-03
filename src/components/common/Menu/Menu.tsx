@@ -1,13 +1,13 @@
 import React from 'react';
 import {styled, useTheme} from "@mui/material/styles";
-import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {menuItems} from "../../../constants/menu";
 import Icon from '@mui/material/Icon';
 import Line from "../Line/Line";
+import {Link} from "react-scroll";
 
-const MenuItem = styled(Typography)(({theme}) => ({
+const MenuItem = styled(Link)(({theme}) => ({
     fontFamily: 'Dosis, serif',
     fontStyle: 'normal',
     fontWeight: 300,
@@ -33,7 +33,7 @@ const Sections = ({isMobile}) :  JSX.Element  => {
     return (
         <Stack direction={{xs: 'row',md: 'column'}}
                justifyContent={{xs: 'center', md: 'space-around'}}
-               spacing={{xs: 3, md: 5}}
+               spacing={{xs: 2, md: 5}}
                width={'max-content'}
                alignItems={'center'}
                component={'nav'}
@@ -54,13 +54,32 @@ const Sections = ({isMobile}) :  JSX.Element  => {
                 menuItems && menuItems.map((item) => {
                     const Icon = item.icon;
                     return isMobile
-                        ? <Icon key={item.name} sx={{
-                            '& :hover': {
-                                color: '#58B5A9',
-                                cursor: 'pointer'
-                            }
-                        }}/>
-                        : <MenuItem key={`${item.name}`} variant='subtitle1'>{item.name}</MenuItem>
+                        ?
+                        (
+                            <Link key={`${item.name}`}
+                                  offset={-50}
+                                  activeClass="activeMenuItem"
+                                  smooth
+                                  spy
+                                  to={item.sectionId}>
+                                <Icon key={item.name} sx={{
+                                    '& :hover': {
+                                        color: '#58B5A9',
+                                        cursor: 'pointer'
+                                    }
+                                }}/>
+                            </Link>
+                        )
+                        : (
+                            <MenuItem key={`${item.name}`}
+                                      offset={-50}
+                                      activeClass="active"
+                                      smooth
+                                      spy
+                                      to={item.sectionId}>
+                                {item.name}
+                            </MenuItem>
+                        )
 
                 })
             }
