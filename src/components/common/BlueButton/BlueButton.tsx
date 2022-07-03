@@ -45,10 +45,10 @@ const AnimatedContainer = styled(Button)(()=> ({
     }
 }));
 
-const BlueButton = ({text, onClick, ...props}: { text: string, onClick?: any}) => {
+const BlueButton = ({text, onClick, type, ...props}: { text: string, onClick?: any, type?: string}) => {
 
     return (
-        <AnimatedContainer onClick={onClick} {...props}>
+        <AnimatedContainer onClick={onClick} type={type || 'button'} {...props}>
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>
