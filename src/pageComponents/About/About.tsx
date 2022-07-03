@@ -9,6 +9,7 @@ import avatar from '../../../public/images/onelky-avatar-cut.png'
 import Box from "@mui/material/Box";
 import {Typography} from "@mui/material";
 import {descriptionParagraph} from "../../constants/about";
+import {Link} from "react-scroll";
 
 const Picture = (): JSX.Element => {
     return(
@@ -23,9 +24,6 @@ const Picture = (): JSX.Element => {
 }
 
 const Content = (): JSX.Element => {
-    const onClick = () => {
-        console.log('click')
-    }
     return(
         <Stack direction={'column'}
                justifyContent={'space-around'}
@@ -46,17 +44,19 @@ const Content = (): JSX.Element => {
                 <a href={'/docs/resume.pdf'} target="_blank">
                     <BlueButton text={'Resume'}/>
                 </a>
-                {/*todo: add link to email (when that functionaity is ready)*/}
-                <BlueButton text={'Say Hello'} onClick={onClick}/>
+                <Link smooth to={'contact'}>
+                    <BlueButton text={'Say Hello'}/>
+                </Link>
             </Stack>
         </Stack>
 
     )
 }
 const About = (): JSX.Element => {
-
     return (
         <Grid container
+              id="about"
+              component={'section'}
               direction='column'
               mt={4}
               width={'100%'}>

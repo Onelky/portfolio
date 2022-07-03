@@ -89,7 +89,10 @@ const Project = ({project, containerDirection = 'row'} : Props ) => {
 };
 const Projects: FunctionComponent = () => {
     return (
-        <Stack justifyContent={'space-around'} mt={15} spacing={8} component={'section'}>
+        <Stack component={'section'}
+               id="projects"
+               justifyContent={'space-around'}
+               mt={15} spacing={8}>
             <Box sx={{width: {xs: '100%', md: '50%'}}}>
                 <SectionHeader title={'Projects'} linePosition={linePositions.right}/>
             </Box>
@@ -102,4 +105,4 @@ const Projects: FunctionComponent = () => {
     );
 };
 
-export default Projects;
+export default Projects

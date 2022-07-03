@@ -91,6 +91,8 @@ const Contact = (): JSX.Element => {
     // @ts-ignore
     return (
         <Grid container
+              component={'section'}
+              id="contact"
               direction='column'
               alignItems={'center'}
               mt={10}
@@ -163,4 +165,4 @@ const Contact = (): JSX.Element => {
     );
 };
 
-export default Contact;
+export default Contact

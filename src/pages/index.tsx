@@ -36,7 +36,7 @@ export default function Home() {
                <Header/>
                <Layout showMenu={showMenu}>
                    <About/>
-                   <Skills></Skills>
+                   <Skills/>
                    <Projects/>
                    <Contact/>
                </Layout>

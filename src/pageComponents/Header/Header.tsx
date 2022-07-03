@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 const Header = (): JSX.Element => {
     return (
         <Grid container
+              id={'header'}
               role="header"
               height="100vh"
               flexWrap={'nowrap'}
