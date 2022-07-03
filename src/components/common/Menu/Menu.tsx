@@ -33,7 +33,7 @@ const Sections = ({isMobile}) :  JSX.Element  => {
     return (
         <Stack direction={{xs: 'row',md: 'column'}}
                justifyContent={{xs: 'center', md: 'space-around'}}
-               spacing={{xs: 3, md: 5}}
+               spacing={{xs: 2, md: 5}}
                width={'max-content'}
                alignItems={'center'}
                component={'nav'}
@@ -60,7 +60,7 @@ const Sections = ({isMobile}) :  JSX.Element  => {
                                 cursor: 'pointer'
                             }
                         }}/>
-                        : <MenuItem key={`${item.name}`} variant='subtitle1'>{item.name}</MenuItem>
+                        : <MenuItem key={`${item.name}`} >{item.name}</MenuItem>
 
                 })
             }
