@@ -1,6 +1,6 @@
 import React from 'react';
 import {styled} from "@mui/material/styles";
-
+import {Link} from "react-scroll";
 
 const ArrowAnimation = styled('div')`
   cursor: pointer;
@@ -37,11 +37,17 @@ const ArrowAnimation = styled('div')`
 
 const Arrows = () :  JSX.Element => {
     return (
-        <ArrowAnimation>
-            <span/>
-            <span/>
-            <span/>
-        </ArrowAnimation>
+        <Link offset={-50}
+              activeClass="activeMenuItem"
+              smooth
+              to={'about'}>
+            <ArrowAnimation>
+                <span/>
+                <span/>
+                <span/>
+            </ArrowAnimation>
+        </Link>
+
     );
 };
 
