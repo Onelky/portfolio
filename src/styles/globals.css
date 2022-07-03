@@ -1,22 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@300;500;600;900&family=Dosis:wght@300&display=swap');
-
-/* Variables */
 :root {
   --title-color: #CCD6F6;
   --paragraph-color: #8CA0AE;
   --accent-color: #58B5A9;
   --card-bg: #020204;
   --error-color: #FFD19C;
+  --background-color: #0A0919
 }
-
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-color: #0A0919;
+  background-color: var(--background-color) !important;
 }
 
 a {
@@ -35,56 +30,56 @@ main{
 /* Typography styles  */
 
 .MuiTypography-h1 {
-  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-family: 'Big Shoulders Stencil Display', cursive !important;
   font-style: normal;
   font-weight: 600;
-  font-size: 66px;
+  font-size: 70px !important;
   text-align: center;
   color: var(--title-color);
 
 }
 
 .MuiTypography-h2 {
-  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-family: 'Big Shoulders Stencil Display', cursive !important;
   font-style: normal;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 32px !important;
   text-align: center;
   color: var(--title-color);
 
 }
 .MuiTypography-h3 {
-  font-family: 'Big Shoulders Stencil Display', cursive;
+  font-family: 'Big Shoulders Stencil Display', cursive !important;
   font-style: normal;
   font-weight: 300;
-  font-size: 26px;
+  font-size: 28px !important;
   color: var(--title-color);
 }
 .MuiTypography-subtitle1 {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', sans-serif !important;
   font-style: normal;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 18px !important;
   text-align: center;
   color: var(--title-color);
 
 }
 
 .MuiTypography-subtitle2 {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', sans-serif !important;
   font-style: normal;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 14px !important;
   text-align: center;
   color: var(--accent-color);
 
 }
 
 .MuiTypography-paragraph {
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Dosis', sans-serif !important;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 16px !important;
   color:  var(--paragraph-color);
 }
 .activeMenuItem {
