@@ -58,6 +58,7 @@ interface Props {
 }
 
 const BlueButton = ({text, onClick, ...props}: Props) => {
+    // @ts-ignore
     return (
         <AnimatedContainer onClick={onClick} {...props}>
             <svg>
