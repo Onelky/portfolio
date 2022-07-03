@@ -33,6 +33,6 @@ export const falcon: Project = {
     githubUrl: 'https://github.com/IDS33X/falcon-frontend'
 }
 export const projects: Project[] = [
+    falcon,
     myTasks,
-    falcon
 ]
