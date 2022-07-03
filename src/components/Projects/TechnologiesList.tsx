@@ -20,12 +20,10 @@ const TechnologiesList = ({technologies}: {technologies: string[]}) => {
         <Grid container
               justifyContent={'center'}
               maxWidth={350}
-              m={'10px auto'}
-              rowGap={1}
-              columnGap={1}>
+              m={'10px auto'}>
             {
                 technologies.map((name) => (
-                    <TechnologyPill item key={getIconPath(name)} xs={3} md={4}>
+                    <TechnologyPill item key={getIconPath(name)} xs={3} md={4} mb={1} mr={1}>
                         <ToolIcon horizontalLayout label={name} iconSize={18} name={getIconPath(name)} />
                     </TechnologyPill>
                 ))
