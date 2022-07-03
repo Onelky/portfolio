@@ -50,10 +50,10 @@ interface Props {
     onClick?: any,
     type?: 'submit' | 'reset' | 'button'
 }
-const BlueButton = ({text, onClick, type, ...props}: Props) => {
+const BlueButton = ({text, onClick, ...props}: Props) => {
 
     return (
-        <AnimatedContainer onClick={onClick} type={type || 'button'} {...props}>
+        <AnimatedContainer onClick={onClick} {...props}>
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>
