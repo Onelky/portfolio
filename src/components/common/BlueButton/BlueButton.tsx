@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Button from "@mui/material/Button";
 import {styled} from "@mui/material/styles";
 
@@ -50,10 +50,10 @@ interface Props {
     onClick?: any,
     type?: 'submit' | 'reset' | 'button'
 }
-const BlueButton = ({text, onClick, ...props}: Props) => {
+const BlueButton: FC<Props>  = ({text, onClick, type}) => {
 
     return (
-        <AnimatedContainer onClick={onClick} {...props}>
+        <AnimatedContainer onClick={onClick} type={type || 'button'}>
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>

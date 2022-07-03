@@ -155,7 +155,7 @@ const Contact = (): JSX.Element => {
                         )}
                     />
 
-                    <BlueButton text={'Send'} type="submit"/>
+                    <BlueButton text={'Send'} type={'submit'}/>
                     </Stack>
 
                 </form>
