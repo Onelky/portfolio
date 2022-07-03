@@ -88,7 +88,6 @@ const Contact = (): JSX.Element => {
     }
 
 
-    // @ts-ignore
     return (
         <Grid container
               component={'section'}

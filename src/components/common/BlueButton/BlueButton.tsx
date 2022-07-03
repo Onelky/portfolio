@@ -45,22 +45,15 @@ const AnimatedContainer = styled(Button)(()=> ({
     }
 }));
 
-enum ButtonTypes {
-    "button",
-    "submit",
-    "reset",
-    undefined
-}
 interface Props {
     text: string,
-    type?: ButtonTypes,
-    onClick?: any
+    onClick?: any,
+    type?: 'submit' | 'reset' | 'button'
 }
+const BlueButton = ({text, onClick, type, ...props}: Props) => {
 
-const BlueButton = ({text, onClick, ...props}: Props) => {
-    // @ts-ignore
     return (
-        <AnimatedContainer onClick={onClick} {...props}>
+        <AnimatedContainer onClick={onClick} type={type || 'button'} {...props}>
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>

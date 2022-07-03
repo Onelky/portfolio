@@ -14,7 +14,7 @@ import Image from "next/image";
 
 export interface Props {
     project: Project,
-    containerDirection?: string,
+    containerDirection?: 'row' | 'column' | 'row-reverse',
 }
 const Project = ({project, containerDirection = 'row'} : Props ) => {
     const {projectName, technologies, imagePath, description, githubUrl, demoUrl} = project;
@@ -98,7 +98,9 @@ const Projects: FunctionComponent = () => {
             </Box>
             {
                 projects.map((project, index) => (
-                    <Project key={project.id} project={project} containerDirection={(index % 2 !== 0) &&  'row-reverse'} />
+                    <Project key={project.id}
+                             project={project}
+                             containerDirection={(index % 2 !== 0)  ? 'row' :  'row-reverse'} />
                 ))
             }
         </Stack>
