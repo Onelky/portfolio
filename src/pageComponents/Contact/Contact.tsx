@@ -94,12 +94,11 @@ const Contact = (): JSX.Element => {
               direction='column'
               alignItems={'center'}
               mt={10}
-              mb={10}
-              rowGap={4}>
+              mb={10}>
             <SectionHeader title={'Contact'}
                            linePosition={linePositions.rightLeft}
                            justifyContent={'start'}/>
-            <Typography variant={'subtitle1'}>
+            <Typography variant={'subtitle1'} mt={2} mb={2}>
                 Leave a message and I'll get back to you as soon as I can.
             </Typography>
                 <form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
