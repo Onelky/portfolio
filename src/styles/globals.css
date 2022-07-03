@@ -87,5 +87,8 @@ main{
   font-size: 16px;
   color:  var(--paragraph-color);
 }
+.activeMenuItem {
+  color: var(--accent-color) !important;
+}
 
 
