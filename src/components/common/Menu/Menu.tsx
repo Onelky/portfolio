@@ -73,7 +73,7 @@ const Sections = ({isMobile}) :  JSX.Element  => {
                         : (
                             <MenuItem key={`${item.name}`}
                                       offset={-50}
-                                      activeClass="active"
+                                      activeClass="activeMenuItem"
                                       smooth
                                       spy
                                       to={item.sectionId}>
