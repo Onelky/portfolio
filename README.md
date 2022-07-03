@@ -4,7 +4,7 @@ Web application to showcase my experience. Built with React and NextJs, hosted i
 
 ## Demo
 
-* [Click here](portfolio-onelky.vercel.app)
+[Click here](https://portfolio-onelky.vercel.app)
 
 ## Dependencies
 
