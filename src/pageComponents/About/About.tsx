@@ -1,15 +1,14 @@
 import React from 'react';
-import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
-import linePositions from "../../constants/sectionHeader";
-import BlueButton from "../../components/common/BlueButton/BlueButton";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
 import Image from 'next/image'
-import avatar from '../../../public/images/onelky-avatar-cut.png'
 import Box from "@mui/material/Box";
 import {Typography} from "@mui/material";
-import {descriptionParagraph} from "../../constants/about";
 import {Link} from "react-scroll";
+import {HEADER_PARAGRAPH, LinePositions} from "../../utils/constants";
+import avatar from '../../../public/images/onelky-avatar-cut.png'
+import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
+import BlueButton from "../../components/common/BlueButton/BlueButton";
 
 const Picture = (): JSX.Element => {
     return(
@@ -35,7 +34,7 @@ const Content = (): JSX.Element => {
                             textAlign: 'justify',
                             m: {xs: '2rem 1rem', md: 0}
                         }}>
-                {descriptionParagraph}
+                {HEADER_PARAGRAPH}
             </Typography>
             <Stack direction={'row'}
                    spacing={{ xs: 2, sm: 3,}}
@@ -66,7 +65,7 @@ const About = (): JSX.Element => {
                   width={{xs: '100%',md: '50%' }}
                   height={'36px'}>
                 <SectionHeader title={'About me'}
-                               linePosition={linePositions.right}
+                               linePosition={LinePositions.right}
                                justifyContent={'start'}/>
 
             </Grid>

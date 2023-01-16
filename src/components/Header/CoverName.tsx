@@ -1,8 +1,7 @@
 import React from 'react';
 import {styled} from "@mui/material/styles";
 import {Typography} from "@mui/material";
-import {name} from '../../constants/header'
-
+import {NAME} from '../../utils/constants'
 
 const AnimatedBorder = styled('div')`
   text-align: center;
@@ -66,7 +65,7 @@ const CoverName = () :  JSX.Element => {
     return (
             <AnimatedBorder>
                 <Text variant='h1'>
-                    {name}
+                    {NAME}
                 </Text>
             </AnimatedBorder>
 

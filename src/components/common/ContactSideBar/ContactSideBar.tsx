@@ -2,12 +2,12 @@ import React from 'react';
 import {useTheme} from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Line from "../Line/Line";
-import Stack from "@mui/material/Stack";
+import Stack, {StackProps} from "@mui/material/Stack";
 import Icon from "../Icon/Icon";
-import {email, github, linkedIn} from "../../../constants/iconNames";
+import {email, github, linkedIn} from "../../../utils/constants";
 import getIconPath from "../../../lib/utils";
 
-const IconsContainer = ({isMobile}) => {
+const IconsContainer: React.FC<{ isMobile: boolean }> = ({isMobile}) => {
     return (
         <Stack direction={isMobile ? "row" : "column"} spacing={1}>
             <a target="_blank" rel="noreferrer" style={{height: '26px'}} href={'https://github.com/Onelky/'}>
@@ -23,7 +23,7 @@ const IconsContainer = ({isMobile}) => {
     );
 };
 
-const ContactSideBar = (props) :  JSX.Element => {
+const ContactSideBar: React.FC<StackProps> = (props) :  JSX.Element => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     return (

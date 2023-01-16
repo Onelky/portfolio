@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from 'react';
+import React, {type FunctionComponent} from 'react';
 import Icon from "../Icon/Icon";
-import {Typography} from "@mui/material";
+import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 
 interface Props {
@@ -28,8 +28,8 @@ const ToolIcon: FunctionComponent<Props> = (props) => {
             <Typography variant={'subtitle1'}
                         sx={{
                             color: 'var(--accent-color) !important',
-                            ml: horizontalLayout && '2px',
-                            fontSize: horizontalLayout && '14px !important',
+                            ml: horizontalLayout ? '2px' : 0,
+                            fontSize: horizontalLayout ? '14px !important' : 'unset',
                             whiteSpace: 'nowrap'
                         }}
             >

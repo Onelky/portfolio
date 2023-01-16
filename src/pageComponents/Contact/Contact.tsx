@@ -1,18 +1,17 @@
-import React, {useRef} from 'react';
+import React, {useEffect} from 'react';
 import Grid from "@mui/material/Grid";
-import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
-import linePositions from "../../constants/sectionHeader";
 import Typography from "@mui/material/Typography";
 import {styled} from "@mui/material/styles";
 import {TextField} from "@mui/material";
 import Stack from "@mui/material/Stack";
-import BlueButton from "../../components/common/BlueButton/BlueButton";
-import emailjs from 'emailjs-com'
 import Swal from 'sweetalert2'
 import {Controller, useForm} from "react-hook-form";
+import {ContactForm} from "../../types";
+import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
+import {LinePositions} from "../../utils/constants";
+import BlueButton from "../../components/common/BlueButton/BlueButton";
 
 const StyledTextField = styled(TextField)(() => ({
-
     fontFamily: 'Dosis',
     fontWeight: 400,
     fontSize: 20,
@@ -58,35 +57,51 @@ const StyledTextField = styled(TextField)(() => ({
 
 
 const Contact = (): JSX.Element => {
-    const { control, handleSubmit, reset } = useForm({
+    const { control, handleSubmit, reset, getValues, formState: {isValid} } = useForm<ContactForm>({
+        mode: 'onBlur',
         defaultValues: {
-            from_name: '',
-            reply_to: '',
+            name: '',
+            email: '',
+            subject: '',
             message: '',
         },
     });
-    const formRef = useRef();
 
-    const onSubmit = () => {
-        emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, formRef.current, process.env.USER_ID)
-            .then((result) => {
-                console.log(result.text);
-                reset()
+    const onSubmit = async () => {
+        const {name, email, subject, message } = getValues()
 
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Message sent Successfully'
-                })
-            }, (error) => {
-                console.log(error.text);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ooops, something went wrong',
-                    text: error.text,
-                })
+        const res = await fetch("/api/sendgrid", {
+            body: JSON.stringify({
+                name,
+                email,
+                subject,
+                message,
+            }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+        });
+
+        const { error } = await res.json();
+        if (error) {
+            await Swal.fire({
+                icon: 'error',
+                title: error
             })
+        }
+        else {
+            reset()
+            await Swal.fire({
+                icon: 'success',
+                title: 'Message sent Successfully'
+            })
+        }
     }
 
+    useEffect(() => {
+        console.log(isValid)
+    }, [isValid]);
 
     return (
         <Grid container
@@ -97,35 +112,35 @@ const Contact = (): JSX.Element => {
               mt={10}
               mb={10}>
             <SectionHeader title={'Contact'}
-                           linePosition={linePositions.rightLeft}
+                           linePosition={LinePositions.rightLeft}
                            justifyContent={'start'}/>
             <Typography variant={'subtitle1'} mt={2} mb={2}>
                 Leave a message and I'll get back to you as soon as I can.
             </Typography>
-                <form onSubmit={handleSubmit(onSubmit)} ref={formRef}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <Stack width={{xs: '100%', sm: 550}} spacing={4} alignItems={'center'}>
                     <Controller
-                        name="from_name"
+                        name="name"
                         control={control}
-                        rules={{ required: 'Name is required', minLength: 1 }}
+                        rules={{ required: 'Required',
+                            maxLength: {value: 80, message: 'Name cannot exceed 80 characters'}
+                        }}
                         render={({ field, fieldState: {  error } }) => (
-                            <>
                                 <StyledTextField variant='outlined'
                                                  label="Name"
                                                  error={!!error}
                                                  helperText={error && error.message}
                                                  {...field}
                                 />
-                            </>
                         )}
                     />
                     <Controller
-                        name="reply_to"
+                        name="email"
                         control={control}
                         rules={{
-                            required: 'Email is required',
+                            required: 'Required',
                             pattern: {
-                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                value: /^[A-Zd._%+-]+@[A-Zd.-]+\.[A-Z]{2,}$/i,
                                 message: "Invalid email address"
                             }
                         }}
@@ -138,11 +153,23 @@ const Contact = (): JSX.Element => {
                             />
                         )}
                     />
-
+                        <Controller
+                            name="subject"
+                            control={control}
+                            rules={{ required: 'Required', maxLength: {value: 80, message: 'Subject cannot exceed 80 characters'} }}
+                            render={({ field, fieldState: {  error } }) => (
+                                <StyledTextField variant='outlined'
+                                                 label="Subject"
+                                                 error={!!error}
+                                                 helperText={error && error.message}
+                                                 {...field}
+                                />
+                            )}
+                        />
                     <Controller
                         name="message"
                         control={control}
-                        rules={{ required:  'Message is required' }}
+                        rules={{ required:  'Required', maxLength: {value: 500, message: 'Message cannot exceed 500 characters'} }}
                         render={({ field, fieldState: {  error } }) => (
                             <StyledTextField variant='outlined'
                                              label="Message..."
@@ -155,7 +182,7 @@ const Contact = (): JSX.Element => {
                         )}
                     />
 
-                    <BlueButton text={'Send'} type={'submit'}/>
+                    <BlueButton text={'Send'} type={'submit'} disabled={!isValid} />
                     </Stack>
 
                 </form>

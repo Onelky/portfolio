@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 import Grid from "@mui/material/Grid";
 import ContactSideBar from "../ContactSideBar/ContactSideBar";
 import Menu from "../Menu/Menu";
 
-
-const Layout = ({children, showMenu}) :  JSX.Element => {
+type LayoutProps = {
+    showMenu: boolean
+}
+const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({children, showMenu}) :  JSX.Element => {
     return (
         <Grid container
               direction={{xs: 'column',md: 'row'}}
