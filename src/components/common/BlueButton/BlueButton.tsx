@@ -1,8 +1,9 @@
-import React, {FC} from 'react';
-import Button from "@mui/material/Button";
+import React, {type FC} from 'react';
+import Button, {type ButtonProps} from "@mui/material/Button";
 import {styled} from "@mui/material/styles";
+import {darken} from "@mui/material";
 
-const AnimatedContainer = styled(Button)(()=> ({
+const AnimatedContainer = styled(Button)<ButtonProps>(()=> ({
     position: 'relative',
     fontSize:'16px',
     fontWeight: 400,
@@ -10,12 +11,20 @@ const AnimatedContainer = styled(Button)(()=> ({
     width: '150px',
     height: '50px',
     textAlign: 'center',
-    color: 'var(--accent-color)',
     cursor: 'pointer',
     letterSpacing: '1px',
     transitionProperty: 'all',
     transitionDuration: '.6s',
     transitionTimingFunction: 'ease',
+    span: {
+        color: 'var(--accent-color)',
+    },
+    '&.Mui-disabled': {
+        span: { color: darken('#58B5A9', 0.4)},
+        rect: {
+            stroke:  darken('#58B5A9', 0.4),
+        },
+    },
     svg: {
         position: 'absolute',
         borderRadius: '4px',
@@ -45,19 +54,19 @@ const AnimatedContainer = styled(Button)(()=> ({
     }
 }));
 
-interface Props {
+interface Props extends ButtonProps{
     text: string,
-    onClick?: any,
-    type?: 'submit' | 'reset' | 'button'
 }
-const BlueButton: FC<Props>  = ({text, onClick, type}) => {
+const BlueButton: FC<Props>  = ({text, onClick, type, ...other}) => {
 
     return (
-        <AnimatedContainer onClick={onClick} type={type || 'button'}>
+        <AnimatedContainer onClick={onClick} type={type || 'button'} {...other}>
             <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%"/>
             </svg>
-            {text}
+            <span>
+                {text}
+            </span>
         </AnimatedContainer>
     );
 };

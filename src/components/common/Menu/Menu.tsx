@@ -2,7 +2,7 @@ import React from 'react';
 import {styled, useTheme} from "@mui/material/styles";
 import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {menuItems} from "../../../constants/menu";
+import {menuItems} from "../../../utils/constants";
 import Icon from '@mui/material/Icon';
 import Line from "../Line/Line";
 import {Link} from "react-scroll";
@@ -29,7 +29,9 @@ const MenuItem = styled(Link)(({theme}) => ({
 
 
 
-const Sections = ({isMobile}) :  JSX.Element  => {
+const Sections = () :  JSX.Element  => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <Stack direction={{xs: 'row',md: 'column'}}
                justifyContent={{xs: 'center', md: 'space-around'}}
@@ -97,7 +99,7 @@ const Menu = () :  JSX.Element => {
                alignItems={'center'}
                justifyContent={{xs: 'center', md: 'space-between'}}>
 
-            <Sections isMobile={isMobile}/>
+            <Sections />
             {
                 !isMobile && (
                     <Line/>

@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    SERVICE_ID: process.env.SERVICE_ID,
-    NAME: process.env.NAME,
-    TEMPLATE_ID: process.env.TEMPLATE_ID,
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+    FROM_EMAIL: process.env.FROM_EMAIL,
+    TO_EMAIL: process.env.TO_EMAIL,
   },
   webpack(config) {
     config.module.rules.push({

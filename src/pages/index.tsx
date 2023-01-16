@@ -7,6 +7,7 @@ import React, {useEffect, useState} from "react";
 import Skills from "../pageComponents/Skills/Skills";
 import Projects from "../pageComponents/Projects/Projects";
 import Contact from "../pageComponents/Contact/Contact";
+import Head from "next/head";
 
 const themeDark = createTheme({
     palette: {
@@ -33,6 +34,10 @@ export default function Home() {
        <ThemeProvider theme={themeDark}>
            <CssBaseline />
            <main>
+               <Head>
+                   <title>Onelky's Portfolio</title>
+                   <link rel="icon" href="/favicon.png" />
+               </Head>
                <Header/>
                <Layout showMenu={showMenu}>
                    <About/>

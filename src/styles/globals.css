@@ -87,3 +87,7 @@ main{
 }
 
 
+/*Sweet alert styles */
+.swal2-confirm {
+  background-color: var(--paragraph-color) !important;
+}
