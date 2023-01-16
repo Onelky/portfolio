@@ -2,6 +2,10 @@
 ## Overview
 Web application to showcase my experience. Built with React and NextJs, hosted in Vercel.
 
+## Demo
+
+[Click here](https://portfolio-onelky.vercel.app)
+
 ## Dependencies
 
 * node <= 14
@@ -41,7 +45,7 @@ A list of technologies used within the project:
 * [Coolors](https://mycolor.space/?hex=%230A0919&sub=1) (Palette)
 
 ### Other
-* [Trello](https://trello.com/b/43Ai1Ei2/onelkys-portfolio) (Project management)
+* [Trello](https://trello.com/b/43Ai1Ei2/portfolio) (Project management)
 
 
 
