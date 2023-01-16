@@ -26,9 +26,5 @@
   ],
   "exclude": [
     "node_modules"
-  ],
-  "paths": {
-    "@images/*": ["public/images/*"],
-    "@images": ["public/images"],
-  }
+  ]
 }

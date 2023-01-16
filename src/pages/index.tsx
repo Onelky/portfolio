@@ -35,7 +35,7 @@ export default function Home() {
            <CssBaseline />
            <main>
                <Head>
-                   <title>Onelky's Portfolio</title>
+                   <title>Onelky</title>
                    <link rel="icon" href="/favicon.png" />
                </Head>
                <Header/>
