@@ -3,13 +3,14 @@ import Button, {type ButtonProps} from "@mui/material/Button";
 import {styled} from "@mui/material/styles";
 import {darken} from "@mui/material";
 
-const AnimatedContainer = styled(Button)<ButtonProps>(()=> ({
+const AnimatedContainer = styled(Button, {shouldForwardProp: propName => propName !== 'fullWidth'})<ButtonProps>
+(({fullWidth})=> ({
+    height: '50px',
+    width: fullWidth ? '100%' : '150px',
     position: 'relative',
     fontSize:'16px',
     fontWeight: 400,
     lineHeight: '45px',
-    width: '150px',
-    height: '50px',
     textAlign: 'center',
     cursor: 'pointer',
     letterSpacing: '1px',
@@ -26,10 +27,10 @@ const AnimatedContainer = styled(Button)<ButtonProps>(()=> ({
         },
     },
     svg: {
+        width: fullWidth ? '100%' : '150px',
+        height: '50px',
         position: 'absolute',
         borderRadius: '4px',
-        width: '150px',
-        height: '50px',
         left: 0,
         top: 0,
     },

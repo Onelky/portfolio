@@ -6,6 +6,10 @@ const nextConfig = {
     FROM_EMAIL: process.env.FROM_EMAIL,
     TO_EMAIL: process.env.TO_EMAIL,
   },
+  images: {
+  loader: 'akamai',
+      path: '',
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

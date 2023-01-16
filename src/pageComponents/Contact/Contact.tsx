@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react';
+import type {ContactForm} from "../../types";
+import React from 'react';
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import {styled} from "@mui/material/styles";
@@ -6,17 +7,18 @@ import {TextField} from "@mui/material";
 import Stack from "@mui/material/Stack";
 import Swal from 'sweetalert2'
 import {Controller, useForm} from "react-hook-form";
-import {ContactForm} from "../../types";
+import {useTheme} from "@mui/system";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import SectionHeader from "../../components/common/SectionHeader/SectionHeader";
 import {LinePositions} from "../../utils/constants";
 import BlueButton from "../../components/common/BlueButton/BlueButton";
 
 const StyledTextField = styled(TextField)(() => ({
+    width: '100%',
     fontFamily: 'Dosis',
     fontWeight: 400,
     fontSize: 20,
     textAlign: 'center',
-    width: '100%',
 
     '& .MuiInputLabel-root':{
         color: 'var(--paragraph-color)',
@@ -57,6 +59,8 @@ const StyledTextField = styled(TextField)(() => ({
 
 
 const Contact = (): JSX.Element => {
+    const theme = useTheme()
+    const isXs = useMediaQuery(theme.breakpoints.only('xs'))
     const { control, handleSubmit, reset, getValues, formState: {isValid} } = useForm<ContactForm>({
         mode: 'onBlur',
         defaultValues: {
@@ -99,10 +103,6 @@ const Contact = (): JSX.Element => {
         }
     }
 
-    useEffect(() => {
-        console.log(isValid)
-    }, [isValid]);
-
     return (
         <Grid container
               component={'section'}
@@ -117,7 +117,7 @@ const Contact = (): JSX.Element => {
             <Typography variant={'subtitle1'} mt={2} mb={2}>
                 Leave a message and I'll get back to you as soon as I can.
             </Typography>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
                     <Stack width={{xs: '100%', sm: 550}} spacing={4} alignItems={'center'}>
                     <Controller
                         name="name"
@@ -182,7 +182,7 @@ const Contact = (): JSX.Element => {
                         )}
                     />
 
-                    <BlueButton text={'Send'} type={'submit'} disabled={!isValid} />
+                    <BlueButton text={'Send'} type={'submit'} disabled={!isValid} fullWidth={isXs} />
                     </Stack>
 
                 </form>

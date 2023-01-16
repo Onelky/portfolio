@@ -58,13 +58,13 @@ const Sections = () :  JSX.Element  => {
                     return isMobile
                         ?
                         (
-                            <Link key={`${item.name}`}
-                                  offset={-50}
+                            <Link key={item.name as string}
+                                  offset={-100}
                                   activeClass="activeMenuItem"
                                   smooth
                                   spy
                                   to={item.sectionId}>
-                                <Icon key={item.name} sx={{
+                                <Icon sx={{
                                     '& :hover': {
                                         color: '#58B5A9',
                                         cursor: 'pointer'
@@ -74,7 +74,7 @@ const Sections = () :  JSX.Element  => {
                         )
                         : (
                             <MenuItem key={`${item.name}`}
-                                      offset={-50}
+                                      offset={-100}
                                       activeClass="activeMenuItem"
                                       smooth
                                       spy

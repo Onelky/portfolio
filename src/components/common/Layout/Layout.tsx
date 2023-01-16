@@ -31,9 +31,7 @@ const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({children, showMenu}) 
             </Grid>
             {
                 showMenu && (
-                    <Grid item
-                          height="420px"
-                          sx={{ position: {md: 'fixed'}, bottom: "0", right: 0 }}>
+                    <Grid item sx={{ height: {md: 420},  position: {md: 'fixed'}, bottom: "0", right: 0 }}>
                         <Menu/>
                     </Grid>
                 )
