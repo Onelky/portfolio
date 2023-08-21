@@ -1,10 +1,10 @@
 :root {
-  --title-color: #CCD6F6;
-  --paragraph-color: #8CA0AE;
-  --accent-color: #58B5A9;
+  --title-color: #ccd6f6;
+  --paragraph-color: #8ca0ae;
+  --accent-color: #58b5a9;
   --card-bg: #020204;
-  --error-color: #FFD19C;
-  --background-color: #0A0919
+  --error-color: #ffd19c;
+  --background-color: #0a0919;
 }
 
 html,
@@ -23,9 +23,9 @@ a {
   box-sizing: border-box;
 }
 
-main{
+main {
   max-width: 1600px;
-  margin: auto
+  margin: auto;
 }
 /* Typography styles  */
 
@@ -36,7 +36,6 @@ main{
   font-size: 70px !important;
   text-align: center;
   color: var(--title-color);
-
 }
 
 .MuiTypography-h2 {
@@ -46,7 +45,6 @@ main{
   font-size: 32px !important;
   text-align: center;
   color: var(--title-color);
-
 }
 .MuiTypography-h3 {
   font-family: 'Big Shoulders Stencil Display', cursive !important;
@@ -62,7 +60,6 @@ main{
   font-size: 18px !important;
   text-align: center;
   color: var(--title-color);
-
 }
 
 .MuiTypography-subtitle2 {
@@ -72,7 +69,6 @@ main{
   font-size: 14px !important;
   text-align: center;
   color: var(--accent-color);
-
 }
 
 .MuiTypography-paragraph {
@@ -80,12 +76,11 @@ main{
   font-style: normal;
   font-weight: 300;
   font-size: 16px !important;
-  color:  var(--paragraph-color);
+  color: var(--paragraph-color);
 }
 .activeMenuItem {
   color: var(--accent-color) !important;
 }
-
 
 /*Sweet alert styles */
 .swal2-confirm {

@@ -1,6 +1,6 @@
-import React from 'react';
-import {styled} from "@mui/material/styles";
-import {Link} from "react-scroll";
+import React from 'react'
+import { styled } from '@mui/material/styles'
+import { Link } from 'react-scroll'
 
 const ArrowAnimation = styled('div')`
   cursor: pointer;
@@ -33,22 +33,18 @@ const ArrowAnimation = styled('div')`
       transform: rotate(45deg) translate(20px,20px);
     }
 
-`;
+`
 
-const Arrows = () :  JSX.Element => {
-    return (
-        <Link offset={-50}
-              activeClass="activeMenuItem"
-              smooth
-              to={'about'}>
-            <ArrowAnimation>
-                <span/>
-                <span/>
-                <span/>
-            </ArrowAnimation>
-        </Link>
+const Arrows = (): JSX.Element => {
+  return (
+    <Link offset={-50} activeClass="activeMenuItem" smooth to={'about'}>
+      <ArrowAnimation>
+        <span />
+        <span />
+        <span />
+      </ArrowAnimation>
+    </Link>
+  )
+}
 
-    );
-};
-
-export default Arrows;
+export default Arrows

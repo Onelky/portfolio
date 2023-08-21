@@ -1,16 +1,16 @@
-import sendgrid from "@sendgrid/mail";
-import {ContactForm} from "../../types";
+import sendgrid from '@sendgrid/mail'
+import { ContactForm } from '../../types'
 
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY ?? '');
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY ?? '')
 
 // @ts-ignore
-async function sendEmail(req: {body: ContactForm}, res) {
-    try {
-        await sendgrid.send({
-            to: process.env.TO_EMAIL,
-            from: process.env.FROM_EMAIL ?? '',
-            subject: `[From portfolio] ${req.body.subject}`,
-            html: `<!DOCTYPE html>
+async function sendEmail(req: { body: ContactForm }, res) {
+  try {
+    await sendgrid.send({
+      to: process.env.TO_EMAIL,
+      from: process.env.FROM_EMAIL ?? '',
+      subject: `[From portfolio] ${req.body.subject}`,
+      html: `<!DOCTYPE html>
       <html lang="en">
       <head>
         <meta charset="utf-8">
@@ -36,18 +36,18 @@ async function sendEmail(req: {body: ContactForm}, res) {
               </div>
          </div>
       </body>
-      </html>`,
-        });
-    } catch (error) {
-        // @ts-ignore
-        return res.status(error.statusCode || 500).json({
-            success: false,
-            // @ts-ignore
-            error: error.message || 'Something went wrong. Please try again.'
-        });
-    }
+      </html>`
+    })
+  } catch (error) {
+    // @ts-ignore
+    return res.status(error.statusCode || 500).json({
+      success: false,
+      // @ts-ignore
+      error: error.message || 'Something went wrong. Please try again.'
+    })
+  }
 
-    return res.status(200).json({ success: true });
+  return res.status(200).json({ success: true })
 }
 
-export default sendEmail;
+export default sendEmail

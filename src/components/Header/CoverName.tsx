@@ -1,7 +1,7 @@
-import React from 'react';
-import {styled} from "@mui/material/styles";
-import {Typography} from "@mui/material";
-import {NAME} from '../../utils/constants'
+import React from 'react'
+import { styled } from '@mui/material/styles'
+import { Typography } from '@mui/material'
+import { NAME } from '../../utils/constants'
 
 const AnimatedBorder = styled('div')`
   text-align: center;
@@ -10,42 +10,39 @@ const AnimatedBorder = styled('div')`
   height: 100px;
   border-image-slice: 10;
   position: relative;
-  z-index:0;
+  z-index: 0;
   overflow: hidden;
-  
-  &::before{
+
+  &::before {
     position: absolute;
-    content: "";
+    content: '';
     width: 150%;
     height: 150%;
-    background-image: conic-gradient(from 270deg, transparent 65%, #63C9BC49 100%);
+    background-image: conic-gradient(from 270deg, transparent 65%, #63c9bc49 100%);
     top: -25%;
     left: -25%;
     z-index: 1;
     animation: rotate 8s linear infinite;
-    
   }
 
-  &::after{
+  &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 150%;
     height: 150%;
-    background-image: conic-gradient(from 180deg, transparent 65%, #58B5A9);
+    background-image: conic-gradient(from 180deg, transparent 65%, #58b5a9);
     top: -25%;
     left: -25%;
     z-index: 2;
     animation: rotate 8s linear infinite;
-
   }
-  
+
   @keyframes rotate {
-   100%{
-     transform: rotate(360deg);
-   }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-
-`;
+`
 
 const Text = styled(Typography)`
   position: absolute;
@@ -53,23 +50,19 @@ const Text = styled(Typography)`
   height: 96%;
   top: 2%;
   left: 2%;
-  background: #0A0919;
+  background: #0a0919;
   z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+`
 
-`;
+const CoverName = (): JSX.Element => {
+  return (
+    <AnimatedBorder>
+      <Text variant="h1">{NAME}</Text>
+    </AnimatedBorder>
+  )
+}
 
-const CoverName = () :  JSX.Element => {
-    return (
-            <AnimatedBorder>
-                <Text variant='h1'>
-                    {NAME}
-                </Text>
-            </AnimatedBorder>
-
-    );
-};
-
-export default CoverName;
+export default CoverName

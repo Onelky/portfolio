@@ -1,15 +1,15 @@
-import {render, screen} from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import CoverName from '../../components/Header/CoverName'
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom/extend-expect'
 
 test('Renders coverName component', () => {
-        render(<CoverName />)
-        const component = screen.getByRole('coverName');
-        expect(component).toBeInTheDocument();
-});
+  render(<CoverName />)
+  const component = screen.getByRole('coverName')
+  expect(component).toBeInTheDocument()
+})
 
 test('Contains name', () => {
-    render(<CoverName />)
-    const component = screen.getByRole('coverName');
-    expect(component).toHaveTextContent('Onelky');
+  render(<CoverName />)
+  const component = screen.getByRole('coverName')
+  expect(component).toHaveTextContent('Onelky')
 })
