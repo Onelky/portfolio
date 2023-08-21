@@ -8,6 +8,8 @@ import Skills from "../pageComponents/Skills/Skills";
 import Projects from "../pageComponents/Projects/Projects";
 import Contact from "../pageComponents/Contact/Contact";
 import Head from "next/head";
+import {Analytics} from '@vercel/analytics/react';
+
 
 const themeDark = createTheme({
     palette: {
@@ -45,6 +47,7 @@ export default function Home() {
                    <Projects/>
                    <Contact/>
                </Layout>
+               <Analytics />
            </main>
 
        </ThemeProvider>
