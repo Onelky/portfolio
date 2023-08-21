@@ -76,13 +76,25 @@ export const falcon: Project = {
   imagePath: 'falcon',
   technologies: [react, javascript, redux, cSharp, sqlServer],
   description:
-    'A web application that can be used to create, edit and control the organizational structure of a given institution. ' +
-    'It also allows to identify and manage potential risks that could threat an organization, as well to apply controls for the prevention of said risks.' +
-    ' Includes authentication and authorization features by using JWT tokens, so users can only visualize contents by their role. ',
+    'Web application that can be used to manage risks of an organization and\n' +
+    'apply controls for their prevention, using React.js, Material UI, Redux and Redux-Thunk.',
   demoUrl: 'https://falcon-frontend.vercel.app',
   githubUrl: 'https://github.com/IDS33X/falcon-frontend'
 }
-export const projects: Project[] = [falcon, myTasks]
+
+export const outdooReview: Project = {
+  id: 'outdooReview',
+  projectName: 'OutdooReview',
+  imagePath: 'outdooReview',
+  technologies: [react, typescript, nodeJs, mongo],
+  description:
+    'Intuitive app for exploring and rating campgrounds. Users could authenticate, see a list of\n' +
+    'places, learn more about each one, add-update spots and review the places they’ve been to.',
+  demoUrl: 'https://github.com/onelky/outdooReview',
+  githubUrl: 'https://github.com/onelky/outdooReview'
+}
+
+export const projects: Project[] = [outdooReview, falcon, myTasks]
 
 // SKILL CARDS
 
