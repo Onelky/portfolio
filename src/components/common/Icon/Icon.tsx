@@ -9,7 +9,8 @@ interface Props {
   useHoverEffect?: boolean
   other?: object
 }
-const Icon = ({ name, size = 26, color, useHoverEffect = false, ...other }: Props) => {
+
+const Icon = ({ name, size = 26, useHoverEffect = false, ...other }: Props) => {
   const [isHovered, setIsHovered] = useState(false)
 
   if (useHoverEffect) {

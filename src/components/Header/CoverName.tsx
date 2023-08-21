@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { styled } from '@mui/material/styles'
 import { Typography } from '@mui/material'
 import { NAME } from '../../utils/constants'
@@ -57,7 +57,7 @@ const Text = styled(Typography)`
   align-items: center;
 `
 
-const CoverName = (): JSX.Element => {
+const CoverName: FC = () => {
   return (
     <AnimatedBorder>
       <Text variant="h1">{NAME}</Text>

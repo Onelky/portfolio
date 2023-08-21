@@ -1,20 +1,20 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Stack from '@mui/material/Stack'
 import { Typography } from '@mui/material'
 import Icon from '../../common/Icon/Icon'
 
-interface Language {
+type TLanguage = {
   key: string
   icon: string
   label: string
   iSpeakPhrase: string
 }
-const languages: Language[] = [
+const languages: TLanguage[] = [
   { key: 'english', icon: 'englishFlag', label: 'English', iSpeakPhrase: 'I speak' },
   { key: 'spanish', icon: 'spainFlag', label: 'Español', iSpeakPhrase: 'Yo hablo' }
 ]
 
-const Language = ({ language }: { language: Language }) => {
+const Language: FC<{ language: TLanguage }> = ({ language }) => {
   return (
     <Stack direction={'row'} minWidth={170} justifyContent={'space-evenly'} alignItems={'center'}>
       <Typography variant={'h3'}>{language.iSpeakPhrase}</Typography>
@@ -39,8 +39,7 @@ const Languages = () => {
       sx={{
         background: 'rgba(2, 2, 4, 0.61)',
         borderRadius: '10px'
-      }}
-    >
+      }}>
       {languages.map((language) => (
         <Language key={language.key} language={language} />
       ))}

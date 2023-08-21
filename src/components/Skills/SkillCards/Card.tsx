@@ -26,8 +26,7 @@ const Card: FunctionComponent<SkillCardProps> = ({ title, icons }) => {
         minHeight: 410,
         width: { xs: 260, md: '30%', lg: 260 },
         maxWidth: 260
-      }}
-    >
+      }}>
       <Typography variant={'h3'}>{title || 'Front-end'}</Typography>
 
       <StyledContainer container>

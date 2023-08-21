@@ -24,8 +24,7 @@ const ToolIcon: FunctionComponent<Props> = (props) => {
           transform: horizontalLayout ? 'none' : 'translateY(-5px)'
         },
         transition: 'all 400ms ease-in-out'
-      }}
-    >
+      }}>
       <Icon name={name} size={iconSize}></Icon>
       <Typography
         variant={'subtitle1'}
@@ -34,8 +33,7 @@ const ToolIcon: FunctionComponent<Props> = (props) => {
           ml: horizontalLayout ? '2px' : 0,
           fontSize: horizontalLayout ? '14px !important' : 'unset',
           whiteSpace: 'nowrap'
-        }}
-      >
+        }}>
         {label}
       </Typography>
     </Stack>

@@ -23,7 +23,7 @@ const IconsContainer: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
   )
 }
 
-const ContactSideBar: React.FC<StackProps> = (props): JSX.Element => {
+const ContactSideBar: React.FC<StackProps> = (props) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
   return (
@@ -33,8 +33,7 @@ const ContactSideBar: React.FC<StackProps> = (props): JSX.Element => {
       alignItems={'center'}
       spacing={2}
       justifyContent={{ xs: 'center', md: 'space-between' }}
-      sx={{ justifyContent: { md: 'space-between' }, height: '200px' }}
-    >
+      sx={{ justifyContent: { md: 'space-between' }, height: '200px' }}>
       {isMobile && <Line horizontal />}
       <IconsContainer isMobile={isMobile} />
       <Line horizontal={isMobile} />

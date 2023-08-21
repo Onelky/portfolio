@@ -19,8 +19,7 @@ const SkillCards: FunctionComponent<Props> = ({ items }) => {
         flexDirection: { xs: 'column', md: 'row' },
         alignItems: 'center',
         justifyContent: 'space-around'
-      }}
-    >
+      }}>
       {items.map((item) => (
         <Card key={item.title} title={item.title} icons={item.icons}></Card>
       ))}

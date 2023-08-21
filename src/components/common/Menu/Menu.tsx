@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { styled, useTheme } from '@mui/material/styles'
 import Stack from '@mui/material/Stack'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { menuItems } from '../../../utils/constants'
-import Icon from '@mui/material/Icon'
 import Line from '../Line/Line'
 import { Link } from 'react-scroll'
 
@@ -26,7 +25,7 @@ const MenuItem = styled(Link)(({ theme }) => ({
   }
 }))
 
-const Sections = (): JSX.Element => {
+const Sections: FC = () => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
   return (
@@ -49,8 +48,7 @@ const Sections = (): JSX.Element => {
           transform: 'translateX(-50%)',
           backdropFilter: 'blur(15px)'
         }
-      })}
-    >
+      })}>
       {menuItems &&
         menuItems.map((item) => {
           const Icon = item.icon
@@ -66,7 +64,7 @@ const Sections = (): JSX.Element => {
               />
             </Link>
           ) : (
-            <MenuItem key={`${item.name}`} offset={-100} activeClass="activeMenuItem" smooth spy to={item.sectionId}>
+            <MenuItem key={item.name as string} offset={-100} activeClass="activeMenuItem" smooth spy to={item.sectionId}>
               {item.name}
             </MenuItem>
           )
@@ -75,7 +73,7 @@ const Sections = (): JSX.Element => {
   )
 }
 
-const Menu = (): JSX.Element => {
+const Menu: FC = () => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
